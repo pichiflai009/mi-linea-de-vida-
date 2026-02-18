@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Historia</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+}
+
+header{
+    background:white;
+    padding:15px;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    border-bottom:1px solid #ddd;
+    position:sticky;
+    top:0;
+}
+
+.feed{
+    max-width:500px;
+    margin:20px auto;
+}
+
+.post{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:12px;
+    margin-bottom:25px;
+    padding:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    animation:fadeIn 0.6s ease forwards;
+    opacity:0;
+}
+
+.post h3{
+    margin:0 0 5px 0;
+}
+
+.likes{
+    font-weight:bold;
+    margin:5px 0;
+}
+
+button{
+    cursor:pointer;
+    font-size:18px;
+    border:none;
+    background:none;
+}
+
+.liked{
+    color:red;
+}
+
+.comment{
+    font-size:14px;
+    margin-top:5px;
+}
+
+.comment span{
+    font-weight:bold;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>Mi Línea de Vida</header>
+
+<div class="feed">
+
+<!-- POST 1 -->
+<div class="post">
+    <h3>2009 - Nací 👶</h3>
+    <p>Comenzó mi historia.</p>
+    <div class="likes"><span class="like-count">120</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>mama:</span> Mi campeón ❤️</div>
+    <div class="comment"><span>tio:</span> Desde chiquito bien crack 😎</div>
+</div>
+
+<!-- POST 2 -->
+<div class="post">
+    <h3>2015 - Primaria 📚</h3>
+    <p>Conocí a mis primeros grandes amigos.</p>
+    <div class="likes"><span class="like-count">98</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>amigo1:</span> Qué tiempos 😭</div>
+</div>
+
+<!-- POST 3 -->
+<div class="post">
+    <h3>2017 - Empecé a jugar fútbol ⚽</h3>
+    <p>Descubrí mi pasión y empecé a entrenar en serio.</p>
+    <div class="likes"><span class="like-count">150</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>dt:</span> Siempre supe que tenías talento 💪</div>
+</div>
+
+<!-- POST 4 -->
+<div class="post">
+    <h3>2018 - Conocí a mi mejor amigo 🤝</h3>
+    <p>Una amistad que hasta hoy sigue firme.</p>
+    <div class="likes"><span class="like-count">210</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>mejor_amigo:</span> Hermano pa siempre 🔥</div>
+</div>
+
+<!-- POST 5 -->
+<div class="post">
+    <h3>2019 - Me lesioné 😔</h3>
+    <p>Fue difícil, pero aprendí a levantarme más fuerte.</p>
+    <div class="likes"><span class="like-count">175</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>coach:</span> Las caídas hacen campeones.</div>
+</div>
+
+<!-- POST 6 -->
+<div class="post">
+    <h3>2020 - Pandemia 🏠</h3>
+    <p>Aprendí a adaptarme y valorar más a mi familia.</p>
+    <div class="likes"><span class="like-count">140</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+</div>
+
+<!-- POST 7 -->
+<div class="post">
+    <h3>2021 - Secundaria 🎓</h3>
+    <p>Nuevos retos, más responsabilidades.</p>
+    <div class="likes"><span class="like-count">189</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+</div>
+
+<!-- POST 8 -->
+<div class="post">
+    <h3>2023 - Mi primer logro importante 🏆</h3>
+    <p>Gané un torneo escolar y me sentí orgulloso.</p>
+    <div class="likes"><span class="like-count">260</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+
+    <div class="comment"><span>profe:</span> Te lo mereces 👏</div>
+</div>
+
+<!-- POST 9 -->
+<div class="post">
+    <h3>2024 - Descubrí la programación 💻</h3>
+    <p>Empecé a crear mis propias páginas web.</p>
+    <div class="likes"><span class="like-count">300</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+</div>
+
+<!-- POST 10 -->
+<div class="post">
+    <h3>Futuro 🚀</h3>
+    <p>Voy a lograr cosas grandes y cumplir mis metas.</p>
+    <div class="likes"><span class="like-count">999</span> likes</div>
+    <button onclick="toggleLike(this)">♡</button>
+</div>
+
+</div>
+
+<script>
+function toggleLike(btn){
+    let likes = btn.parentElement.querySelector(".like-count");
+    let count = parseInt(likes.innerText);
+
+    if(btn.classList.contains("liked")){
+        btn.classList.remove("liked");
+        btn.innerHTML="♡";
+        likes.innerText = count - 1;
+    } else{
+        btn.classList.add("liked");
+        btn.innerHTML="♥";
+        likes.innerText = count + 1;
+    }
+}
+</script>
+
+</body>
+</html>
